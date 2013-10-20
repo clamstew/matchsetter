@@ -15,8 +15,9 @@ Matchsetter::Application.routes.draw do
   get '/users/:id/matches/new', to: 'matches#new_solo', as: 'new_user_match'
   post '/users/:id/matches', to: 'matches#create_solo', as: 'user_matches'
 
-  # root
+  # root and static pages
   root :to => "home#index"
+  get '/about', to: "home#about", as: "about"
 
   # user stuff with devise
   devise_for :users, :controllers => {:registrations => "registrations"}
