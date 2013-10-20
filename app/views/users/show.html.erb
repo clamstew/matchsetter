@@ -1,3 +1,9 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
+<h3><%= @user.first_name if @user.first_name %> <%= @user.last_name if @user.last_name %></h3>
+<p><img src="http://placehold.it/50x50" /></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>Gender: <%= @user.gender if @user.gender %></p>
+<p>Skillset: <%= @user.skillset if @user.skillset %></p>
+<p>Rating (... program generates ...): <%= @user.rating if @user.rating %></p>
+<p>Age: <%= @user.age if @user.age %></p>
+
+

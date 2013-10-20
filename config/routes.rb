@@ -1,5 +1,7 @@
 Matchsetter::Application.routes.draw do
-  resources :matches
+  resources :matches do
+    resources :players, :only => [:create, :index, :new]
+  end
 
   resources :courts
 

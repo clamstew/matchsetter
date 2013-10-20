@@ -1,9 +1,13 @@
-<%= simple_form_for(@match) do |f| %>
-  <%= f.error_notification %>
+<%= form_for @match do |f| %>
+  <%#= f.error_notifications %>
 
   <div class="form-inputs">
-    <%= f.input :game_time %>
-    <%= f.association :court %>
+  	<%= f.label :game_time, 'When is your Match?' %>:
+    <%= f.datetime_select :game_time %>
+    <%#= f.association :court %>
+    <%= f.fields_for :players do |builder| %>
+	  <%= render "users_fields", :f => builder %>
+	<% end %>
   </div>
 
   <div class="form-actions">

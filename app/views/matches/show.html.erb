@@ -6,6 +6,13 @@
 </p>
 
 <p>
+  <strong>Players:</strong><br />
+  <% @match.players.each do |player| %>
+  	<%= player.user.first_name %><br />
+  <% end %>
+</p>
+
+<p>
   <strong>Court:</strong>
   <%= @match.court %>
 </p>

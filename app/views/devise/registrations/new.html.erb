@@ -2,8 +2,18 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
+  <%= f.input :first_name, :autofocus => true %>
+  <%= f.input :last_name %>
   <%= f.input :email, :required => true %>
+
+  <%= f.input :skillset, :required => true, label: 'NTRP Rating #', input_html: { class: 'ntrp_rating' } %>
+  <small>Find Your skillset: <a href="http://assets.usta.com/assets/1/15/General%20_%20Experienced%20Player%20Guidelines.pdf" target="_blank">Here</a></small>
+  <%= f.input :age, :required => true %>
+  <%#= f.input :gender, :required => true %>
+  <%= f.input :gender, :as => :select do %>
+    <%= f.select :gender, [['Male', 'm'], ['Female', 'f']] %>
+  <% end %>
+
   <%= f.input :password, :required => true %>
   <%= f.input :password_confirmation, :required => true %>
   <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>

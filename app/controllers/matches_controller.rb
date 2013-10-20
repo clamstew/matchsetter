@@ -14,7 +14,9 @@ class MatchesController < ApplicationController
 
   # GET /matches/new
   def new
-    @match = Match.new
+    @users  = User.all
+    @match  = Match.new
+    @match.players.build
   end
 
   # GET /matches/1/edit
@@ -26,8 +28,12 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(match_params)
 
+    if @match.save
+      Player.create(user_id: current_user.id, match_id: @match.id)
+    end
+
     respond_to do |format|
-      if @match.save
+      if @match
         format.html { redirect_to @match, notice: 'Match was successfully created.' }
         format.json { render action: 'show', status: :created, location: @match }
       else
@@ -69,6 +75,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:game_time, :court_id)
+      params.require(:match).permit(:game_time, :court_id, players_attributes: [:user_id])
     end
 end

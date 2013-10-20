@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+  <% if user != current_user %>
+  <p>
+  	<%= f.radio_button :user_id, user.id , as: :radio_buttons %>
+  	<%=link_to "#{user.first_name} #{user.last_name}", user %>
+  </p>
+  <% end %>
+<% end %>

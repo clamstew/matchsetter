@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user.gender = 'Male' if @user.gender == 'm'
+    @user.gender = 'Female' if @user.gender == 'f'
   end
   
   def update
