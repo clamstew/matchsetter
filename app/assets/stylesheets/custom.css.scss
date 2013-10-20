@@ -1,7 +1,14 @@
 // Global Styles
 
-h3, h2 {
+
+
+header, h3, h2 {
 	font-family: 'Imprima', serif
+}
+
+header {
+	font-size:2em;
+	font-weight: bold;
 }
 
 //
@@ -17,6 +24,10 @@ h3, h2 {
 
 .pull-right {
 	float: right;
+}
+
+.pull-left {
+	float: left;
 }
 
 .center {
