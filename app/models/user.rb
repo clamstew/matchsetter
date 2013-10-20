@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 
   has_many :players
   has_many :matches, through: :players
+  belongs_to :location
 end
