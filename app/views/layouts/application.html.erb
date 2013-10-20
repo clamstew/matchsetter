@@ -19,8 +19,10 @@
       <div id="container" class="container">
         <div class="ten columns content">
           <header>
-            <%= render 'layouts/navigation' %>
-            <%= render 'layouts/messages' %>
+            <% if user_signed_in? %>
+              <%= render 'layouts/navigation' %>   
+            <% end %>
+          <%= render 'layouts/messages' %>
           </header>
           <div id="main" role="main">
             
