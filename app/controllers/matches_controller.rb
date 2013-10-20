@@ -14,7 +14,9 @@ class MatchesController < ApplicationController
 
   # GET /matches/new
   def new
-    @users  = User.all
+    @ntrp_floor = (current_user.skillset - 0.5) if current_user.skillset
+    @ntrp_ceiling = (current_user.skillset + 0.5) if current_user.skillset
+    @users  = User.where("skillset >= ? AND skillset <= ?", @ntrp_floor, @ntrp_ceiling) # for finding users
     @match  = Match.new
     @match.players.build
   end

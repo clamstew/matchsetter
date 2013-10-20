@@ -2,11 +2,12 @@
 	<p>No users to challenge. Please check back.</p>
 <% else %>
 	<p><strong>Who would you like to play?</strong></p>
+	<small>Showing only opponents with levels: (<%= "#{@ntrp_floor} and #{@ntrp_ceiling})" %></small>
 	<% @users.each do |user| %>
 	  <% if user != current_user %>
 	  <p>
 	  	<%= f.radio_button :user_id, user.id , as: :radio_buttons %>
-	  	<%=link_to "#{user.first_name} #{user.last_name}", user %>
+	  	<%=link_to "#{user.first_name} #{user.last_name} (level: #{user.skillset})", user %>
 	  </p>
 	  <% end %>
 	<% end %>
