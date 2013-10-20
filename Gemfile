@@ -32,10 +32,7 @@ group :development, :test do
 end
 group :production do
   gem 'unicorn'
-<<<<<<< HEAD
   gem 'rails_12factor'
-=======
->>>>>>> 8b38ac7a86a47591e786b19a969327025109c85b
 end
 group :test do
   gem 'capybara'
