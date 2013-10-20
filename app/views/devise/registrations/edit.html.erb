@@ -6,8 +6,19 @@
   <%= f.input :last_name %>
   <%= f.input :email, :required => true %>
 
-  <%= f.input :profile_pic, label: 'Profile Picture URL (optional)', input_html: { class: 'form_field_subtext' } %>
-  <small class="form_hint_text">Paste Picture URL (e.g. http://domain.com/image.jpg)</small>
+  <hr />
+
+  <% location_array = [] %>
+  <% Location.all.each do |x| %>
+    <% a = [ x.name.titleize , x.id ] %>
+    <% location_array << a %>
+  <% end %>
+
+  <%= f.input :location_id, :as => :select do %>
+    <%= f.select :location_id, location_array %>
+  <% end %>
+  <p>&nbsp;</p>
+
 
   <%= f.input :skillset, :required => true, label: 'NTRP Rating (Level)', input_html: { class: 'form_field_subtext' } %>
   <small class="form_hint_text">NTRP Rating: <a href="/ntrp_rating_info.pdf" target="_blank">Here</a></small>
@@ -17,6 +28,12 @@
     <%= f.select :gender, [['Male', 'm'], ['Female', 'f']] %>
   <% end %>
 
+  <%= f.input :profile_pic, label: 'Profile Picture URL (optional)', input_html: { class: 'form_field_subtext' } %>
+  <small class="form_hint_text">Paste Picture URL (e.g. http://domain.com/image.jpg)</small>
+
+  
+
+  <hr />
 
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>

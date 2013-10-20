@@ -23,7 +23,7 @@ footer {
 	color: #ffffff;
 	font-weight:bold;
 	font-size: 20px;
-	margin: 0 0 0 20px;
+	margin: 10px 0 0 20px;
 	color: yellow;
 }
 
@@ -41,6 +41,10 @@ footer {
 
 .logo {
 	width: 300px / 360px * 100%;
+}
+
+.ball-logo {
+	margin-bottom: -4px;
 }
 // Global CSS override for input number to match other inputs
 
