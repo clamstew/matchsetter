@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require coffin
+
+// for small mobile pages it will 
+// at least fill up the full screen
+(function() {
+	var windowHeight = +$(window).height();
+	$('.container').css("min-height", windowHeight);
+})();

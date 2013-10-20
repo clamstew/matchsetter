@@ -1,14 +1,5 @@
-<h3>match setter (logo here..)</h3>
-
-<%= link_to "New Match", new_match_path %>
-
-
-
-
-
-
-
-<hr />
-<% @users.each do |user| %>
-  <p>User: <%=link_to "#{user.first_name} #{user.last_name}", user %></p>
+<% if user_signed_in? %>
+	<%= render 'logged_in_home' %>
+<% else %>
+	<%= render 'logged_out_home' %>
 <% end %>
