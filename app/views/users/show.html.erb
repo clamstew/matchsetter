@@ -2,7 +2,7 @@
 	<% if @user.profile_pic %>
 		<img src="<%= @user.profile_pic %>" />
 	<% else %>
-		<img src="http://placehold.it/50x50" />
+		<img src="//placehold.it/50x50" />
 	<% end %>
 	<%= @user.first_name.capitalize if @user.first_name %> <%= @user.last_name.capitalize if @user.last_name %>
 </h3>
