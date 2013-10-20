@@ -23,7 +23,10 @@
 		<% end %>
   	</div>
     <%= "#{user.first_name} #{user.last_name}  (level: #{user.skillset})" %>
-    <%= link_to "Challenge", new_user_match_path(user), {class: ''} %>
+    <i class="icon-calendar-empty"></i>
+    <%= link_to new_user_match_path(user), {class: ''} do %>
+		Challenge
+    <% end %>
   </h4>
 <% end %>
 

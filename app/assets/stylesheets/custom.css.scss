@@ -86,6 +86,16 @@ small.form_hint_text {
 	font-size: 24px;
 }
 
+.login-in-buttons {
+	background: #FFF -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%);
+	width: 140px;
+	float: left;
+	margin-left: 80px;
+	p {
+		width: 40%;
+	}
+}
+
 // USER ROWS
 .user-rows-wrapper, .matches-rows-wrapper {
 	border-bottom: 1px solid #ccc;
