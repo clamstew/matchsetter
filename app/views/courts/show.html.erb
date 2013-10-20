@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @court.type %>
+</p>
+
+<p>
+  <strong>Open:</strong>
+  <%= @court.open %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @court.location %>
+</p>
+
+<%= link_to 'Edit', edit_court_path(@court) %> |
+<%= link_to 'Back', courts_path %>

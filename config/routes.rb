@@ -1,4 +1,6 @@
 Matchsetter::Application.routes.draw do
+  resources :courts
+
   resources :locations
 
   root :to => "home#index"
