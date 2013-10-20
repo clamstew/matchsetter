@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Game time:</strong>
-  <%= @match.game_time %>
+  <strong>Game time:</strong><br />
+  <%= @match.game_time.to_formatted_s(:awesome_time) %>
 </p>
 
 <p>
   <strong>Players:</strong><br />
   <% @match.players.each do |player| %>
-  	<%= player.user.first_name %><br />
+  	<% if player.user == current_user %>
+  	  <%= link_to "#{player.user.first_name} #{player.user.last_name} (Me)", user_path(player.user.id) %>
+  	<% else %>
+  	  <%= link_to "#{player.user.first_name} #{player.user.last_name}", user_path(player.user.id) %>
+  	<% end %>
+  	<br />
   <% end %>
 </p>
 

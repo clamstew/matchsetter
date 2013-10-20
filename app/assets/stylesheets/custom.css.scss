@@ -23,8 +23,13 @@ input[type=number] {
 	background: #fff;
 }
 
-input[type=number].ntrp_rating {
+input.form_field_subtext {
 	margin-bottom: 0px;
+}
+
+small.form_hint_text {
+	display:block;
+	margin-bottom: 20px;
 }
 
 #user_gender {

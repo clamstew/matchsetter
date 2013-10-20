@@ -2,12 +2,26 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
+  <%= f.input :first_name, :autofocus => true %>
+  <%= f.input :last_name %>
   <%= f.input :email, :required => true %>
+
+  <%= f.input :profile_pic, label: 'Profile Picture URL (optional)', input_html: { class: 'form_field_subtext' } %>
+  <small class="form_hint_text">Paste Picture URL (e.g. http://domain.com/image.jpg)</small>
+
+  <%= f.input :skillset, :required => true, label: 'NTRP Rating #', input_html: { class: 'form_field_subtext' } %>
+  <small class="form_hint_text">Find Your skillset: <a href="http://assets.usta.com/assets/1/15/General%20_%20Experienced%20Player%20Guidelines.pdf" target="_blank">Here</a></small>
+  <%= f.input :age, :required => true %>
+  <%#= f.input :gender, :required => true %>
+  <%= f.input :gender, :as => :select do %>
+    <%= f.select :gender, [['Male', 'm'], ['Female', 'f']] %>
+  <% end %>
+
+
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+  <%= f.button :submit, 'Save Profile', :class => 'btn-primary' %>
 <% end %>
 <h3>Cancel my account</h3>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
