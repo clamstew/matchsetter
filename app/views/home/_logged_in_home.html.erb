@@ -3,12 +3,60 @@
 <%= link_to "Find a Match", new_match_path, {class: "button wide-btn"} %>
 
 
+<div class="homepage-icons-main-wrappers clearfix">
+	<div class="homepage-big-icon-wraps">
+		<a href="/">
+			<i class="icon-bar-chart"></i>
+		</a>
+	</div>
+	<div class="homepage-big-icon-subtext clearfix">level</div>
+</div>
 
+<div class="homepage-icons-main-wrappers clearfix">
+	<div class="homepage-big-icon-wraps">
+		<a href="/">
+			<i class="icon-heart"></i>
+		</a>
+	</div>
+	<div class="homepage-big-icon-subtext">favorite</div>
+</div>
 
+<div class="homepage-icons-main-wrappers clearfix">
+	<div class="homepage-big-icon-wraps">
+		<a href="/">
+			<i class="icon-tags"></i>
+		</a>
+	</div>
+	<div class="homepage-big-icon-subtext">age</div>
+</div>
 
+<div class="homepage-icons-main-wrappers clearfix">
+	<div class="homepage-big-icon-wraps">
+		<a href="/">
+			<i class="icon-time"></i>
+		</a>
+	</div>
+	<div class="homepage-big-icon-subtext">availability</div>
+</div>
 
+<div class="homepage-icons-main-wrappers clearfix">
+	<div class="homepage-big-icon-wraps">
+		<a href="/">
+			<i class="icon-trophy"></i>
+		</a>
+	</div>
+	<div class="homepage-big-icon-subtext">score</div>
+</div>
+
+<div class="homepage-icons-main-wrappers clearfix">
+	<div class="homepage-big-icon-wraps">
+		<a href="/">
+			<i class="icon-map-marker"></i>
+		</a>
+	</div>
+	<div class="homepage-big-icon-subtext">location</div>
+</div>
 
 <hr />
-<% @users.each do |user| %>
-  <p>User: <%=link_to "#{user.first_name} #{user.last_name}", user %></p>
-<% end %>
+
+

@@ -11,6 +11,11 @@ header {
 	font-weight: bold;
 }
 
+footer {
+	height: 40px;
+	background: #ddd;
+}
+
 //
 
 .bar {
@@ -79,3 +84,46 @@ small.form_hint_text {
 .user-rows-wrapper, .matches-rows-wrapper {
 	border-bottom: 1px solid #ccc;
 }
+
+// ====== HOMEPAGE =========
+.homepage-icons-main-wrappers {
+	width: 130px;
+	//border: 1px solid red;
+	float: left;
+	margin-right: 20px;
+	.homepage-big-icon-wraps {
+		border: 5px solid yellow;
+		width: 130px;
+		height: 130px;
+		display: block;
+		float: left;
+		-webkit-border-radius: 130px;
+	    border-radius: 130px;
+	    vertical-align: border-bottom;
+	    text-align: center;
+	    font-size: 70px;
+	    margin: 3px;
+	    line-height: 20px;
+	    i {
+	    	display: block;
+	    	margin-top: 30px;
+	    }
+	}
+	a, a:active {
+		text-decoration: none;
+	}
+}
+
+.homepage-big-icon-subtext {
+	width: 130px;
+	display: inline-block;
+    text-align: center;
+    // border: 1px solid red;
+    float: left;
+    font-weight: bold;
+    //margin-right: 3px; 
+}
+
+
+
+
