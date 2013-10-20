@@ -7,7 +7,9 @@ Matchsetter::Application.routes.draw do
 
   resources :courts
 
-  resources :locations
+  # decided to keep in index but just put in the users matches
+  # that they have scheduled
+  resources :locations#, except: :index
 
   # for making new matches from clicking create match with a specific user
   get '/users/:id/matches/new', to: 'matches#new_solo', as: 'new_user_match'

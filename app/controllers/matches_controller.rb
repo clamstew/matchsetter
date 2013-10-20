@@ -5,7 +5,7 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.all
+    @matches = current_user.matches
   end
 
   # GET /matches/1

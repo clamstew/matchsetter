@@ -2,6 +2,11 @@
 	color: #ffffff;
 	font-weight:bold;
 	font-size: 20px;
+	margin: 0 0 0 20px;
+}
+
+.pull-right {
+	float: right;
 }
 
 // Global CSS override for input number to match other inputs
@@ -42,4 +47,7 @@ small.form_hint_text {
 	font-size: 24px;
 }
 
-// STRUCTURE
+// USER ROWS
+.user-rows-wrapper, .matches-rows-wrapper {
+	border-bottom: 1px solid #ccc;
+}

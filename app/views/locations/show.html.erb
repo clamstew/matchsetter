@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h3>
-  <!-- <strong>Name:</strong> -->
-  <%= @location.name %>
+  <%= @location.name.titleize %>
 </h3>
 
 <% if @location.address1 || @location.address2 || @location.state || @location.city || @location.zip %>
@@ -13,9 +12,9 @@
 <hr />
 
 <% @users.each do |user| %>
-  <h4>
+  <h4 class="user-rows-wrapper">
     <%= "#{user.first_name} #{user.last_name}  (level: #{user.skillset})" %>
-    <%= link_to "Challenge", new_user_match_path(user)%>
+    <%= link_to "Challenge", new_user_match_path(user), {class: 'pull-right'} %>
   </h4>
 <% end %>
 

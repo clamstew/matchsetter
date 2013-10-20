@@ -1,29 +1,22 @@
-<h1>Listing matches</h1>
+<h1>
+  My Matches
+  <%= link_to 'New Match', new_match_path, {class: "button pull-right"} %>
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Game time</th>
-      <th>Court</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @matches.each do |match| %>
-      <tr>
-        <td><%= match.game_time %></td>
-        <td><%= match.court %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<hr/>
 
-<br>
-
-<%= link_to 'New Match', new_match_path %>
+<% @matches.each do |match| %>
+  <div class="matches-rows-wrapper">
+    <div class="first-line">
+      <strong>[Court Names / Numbers placeholder]</strong>
+    </div>
+    <div class="second-line">
+      <%= match.game_time.to_formatted_s(:awesome_time) %>
+    </div>
+    <div class="third-line">
+      <%= link_to 'Show', match %> |
+      <%= link_to 'Delete', match, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
