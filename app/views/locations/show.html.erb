@@ -13,8 +13,15 @@
 
 <% @users.each do |user| %>
   <h4 class="user-rows-wrapper">
+  	<div class="user-rows-img-wrap">
+  		<% if user.profile_pic %>
+			<img src="<%= user.profile_pic %>" />
+		<% else %>
+			<div class="placeholderimg" style="font-size: 50px;"><i class="icon-user"></i></div>
+		<% end %>
+  	</div>
     <%= "#{user.first_name} #{user.last_name}  (level: #{user.skillset})" %>
-    <%= link_to "Challenge", new_user_match_path(user), {class: 'pull-right'} %>
+    <%= link_to "Challenge", new_user_match_path(user), {class: ''} %>
   </h4>
 <% end %>
 

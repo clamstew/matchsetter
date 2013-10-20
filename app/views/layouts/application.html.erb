@@ -20,10 +20,11 @@
         <div class="ten columns content">
           <header>
             <% if user_signed_in? %>
-              <%= render 'layouts/navigation' %>   
+              <span class="header-fonts"><%= render 'layouts/navigation' %></span>
             <% end %>
-          <%= render 'layouts/messages' %>
+            <%= render 'layouts/messages' %>
           </header>
+          
           <div id="main" role="main">
             
             <%= yield %>
