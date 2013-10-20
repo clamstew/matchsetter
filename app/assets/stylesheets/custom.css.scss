@@ -1,4 +1,13 @@
+// Global Styles
+
+h3, h2 {
+	font-family: 'Imprima', serif
+}
+
+//
+
 .bar {
+	font-family: 'Imprima', sans-serif;
 	color: #ffffff;
 	font-weight:bold;
 	font-size: 20px;
@@ -10,6 +19,13 @@
 	float: right;
 }
 
+.center {
+	text-align: center;
+}
+
+.logo {
+	width: 300px / 360px * 100%;
+}
 // Global CSS override for input number to match other inputs
 
 input[type=number] {
