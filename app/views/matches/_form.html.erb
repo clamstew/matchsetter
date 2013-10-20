@@ -1,0 +1,12 @@
+<%= simple_form_for(@match) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :game_time %>
+    <%= f.association :court %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
