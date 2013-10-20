@@ -5,11 +5,16 @@
     <title><%= content_for?(:title) ? yield(:title) : "Matchsetter" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Matchsetter" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
+<<<<<<< HEAD
     
+=======
+    <%= javascript_include_tag "application" %>
+>>>>>>> 8b38ac7a86a47591e786b19a969327025109c85b
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
+<<<<<<< HEAD
 
     <%= render 'layouts/coffin_drawer' %>
 
@@ -33,5 +38,18 @@
   <!-- javascript -->  
   <%= javascript_include_tag "application" %>
   <%= yield :javascript %>
+=======
+    <div id="container" class="container">
+      <header>
+        <%= render 'layouts/navigation' %>
+        <%= render 'layouts/messages' %>
+      </header>
+      <div id="main" role="main">
+        <%= yield %>
+      </div>
+      <footer>
+      </footer>
+    </div> <!--! end of #container -->
+>>>>>>> 8b38ac7a86a47591e786b19a969327025109c85b
   </body>
 </html>

@@ -9,4 +9,8 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+<<<<<<< HEAD
 Matchsetter::Application.config.secret_key_base = '8cdbb4d803827a0fc673930c7815e416ba854386da74f023042c390596d8cd84ea6823e3582e0cc69bb3c1768dea85ecc3c4958d3dc0f00b4c14d81863f8fea3'
+=======
+Matchsetter::Application.config.secret_key_base = '4f0ae248849dca8c5e7829c43ac88f6bb906b8a8365d17dba7d902c026e7cca2dd5480998452125b3c5646231826ab259e871eec1ad238d756615ace3b2a5ac3'
+>>>>>>> 8b38ac7a86a47591e786b19a969327025109c85b
