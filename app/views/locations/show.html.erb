@@ -1,34 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h3>
+  <!-- <strong>Name:</strong> -->
   <%= @location.name %>
-</p>
+</h3>
 
-<p>
-  <strong>Address1:</strong>
-  <%= @location.address1 %>
-</p>
+<% if @location.address1 || @location.address2 || @location.state || @location.city || @location.zip %>
+  <p>
+    <%= "#{@location.address1}," if @location.address1 %> <%= "#{@location.address2}," if @location.address2 %> <%= "#{@location.city}" if @location.city %> <%= "#{@location.state}" if @location.state %> <%= "#{@location.zip}" if @location.zip %>
+  </p>
+<% end %> 
+<hr />
 
-<p>
-  <strong>Address2:</strong>
-  <%= @location.address2 %>
-</p>
+<% @users.each do |user| %>
+  <h4>
+    <%= "#{user.first_name} #{user.last_name}  (level: #{user.skillset})" %>
+    <%= link_to "Challenge", new_user_match_path(user)%>
+  </h4>
+<% end %>
 
-<p>
-  <strong>State:</strong>
-  <%= @location.state %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @location.city %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @location.zip %>
-</p>
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%#= link_to 'Edit', edit_location_path(@location) %>
+<%#= link_to 'Back', locations_path %>

@@ -1,0 +1,10 @@
+<h1>Schedule a Match</h1>
+<p>
+	<strong>Opponent:</strong> <%= @user.first_name.capitalize if @user.first_name %>
+	<%= @user.last_name.capitalize if @user.last_name %>
+	(level: <%= @user.skillset if @user.skillset %>)
+</p>
+
+<%= render 'form_solo' %>
+
+<%= link_to 'Back', matches_path %>
