@@ -1,4 +1,4 @@
-<% if @users.nil? %>
+<% if @users.nil? || @users.count <= 1 %>
 	<p>No users to challenge. Please check back.</p>
 <% else %>
 	<% @users.each do |user| %>
