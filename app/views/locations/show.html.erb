@@ -17,7 +17,9 @@
   		<% if user.profile_pic %>
 			<img src="<%= user.profile_pic %>" />
 		<% else %>
-			<div class="placeholderimg" style="font-size: 50px;"><i class="icon-user"></i></div>
+			<div class="placeholderimg" style="font-size: 50px;">
+				<%= image_tag 'headshot_placeholder.png', size: "50x50" %>
+			</div>
 		<% end %>
   	</div>
     <%= "#{user.first_name} #{user.last_name}  (level: #{user.skillset})" %>
