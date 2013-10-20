@@ -1,8 +1,9 @@
 <!-- Defines a coffin drawer -->
 <div class="coffin">
-  <div class="bar">coffin</div>
+  <div class="bar">matchsetter</div>
   <ul class="nav">
     <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "My Profile", user_path(current_user.id) %></li>
     <li><a data-coffin="click" href="#about">About</a></li>
     <li><a data-coffin="click" href="#contact">Contact</a></li>
   </ul>

@@ -11,6 +11,14 @@ class UsersController < ApplicationController
     @user.gender = 'Male' if @user.gender == 'm'
     @user.gender = 'Female' if @user.gender == 'f'
   end
+
+  def edit
+    if current_user === User.find(params[:id])
+      @user = User.find(params[:id])
+    else 
+      redirect_to current_user, :alert => "Access Denied"
+    end
+  end
   
   def update
     authorize! :update, @user, :message => 'Not authorized as an administrator.'

@@ -6,4 +6,8 @@
 <p>Rating (... program generates ...): <%= @user.rating if @user.rating %></p>
 <p>Age: <%= @user.age if @user.age %></p>
 
+<% if current_user == @user %>
+  <%= link_to "Edit Profile", edit_user_registration_path %>
+<% end %>
+
 
