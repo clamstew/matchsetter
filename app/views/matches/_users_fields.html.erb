@@ -1,6 +1,7 @@
 <% if @users.nil? || @users.count <= 1 %>
 	<p>No users to challenge. Please check back.</p>
 <% else %>
+	<p><strong>Who would you like to play?</strong></p>
 	<% @users.each do |user| %>
 	  <% if user != current_user %>
 	  <p>
