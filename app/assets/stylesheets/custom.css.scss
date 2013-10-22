@@ -105,9 +105,7 @@ small.form_hint_text {
 	border-bottom: 1px solid #ccc;
 }
 
-.user-rows-wrapper:first-child {
-	border-top: 1px solid #ccc;
-}
+
 
 .user-rows-wrapper {
 	margin-left: 5px;
@@ -128,6 +126,10 @@ background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1)
 background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 61%,rgba(239,239,239,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
 
+}
+
+.user-rows-wrapper:first-child {
+	border-top: 1px solid #ccc;
 }
 
 // ====== HOMEPAGE =========

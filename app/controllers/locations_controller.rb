@@ -14,11 +14,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    if current_user.location != nil
-      @users = @location.users
-    else 
-      redirect_to root_path, alert: 'fasdfasd do not have a home court set. Go to your profile and set it.'
-    end
+    @users = @location.users
   end
 
   # GET /locations/new
