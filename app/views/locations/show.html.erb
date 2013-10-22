@@ -15,7 +15,7 @@
   <h4 class="user-rows-wrapper">
   	<div class="user-rows-img-wrap">
   		<% if user.profile_pic %>
-			<img src="<%= user.profile_pic %>" />
+			<img src="<%= user.profile_pic %>" width="50px" />
 		<% else %>
 			<div class="placeholderimg" style="font-size: 50px;">
 				<%= image_tag 'headshot_placeholder.png', size: "50x50" %>

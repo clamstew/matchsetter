@@ -1,8 +1,9 @@
 <h3>
-	<% if @user.profile_pic %>
-		<img src="<%= @user.profile_pic %>" />
+	<% if @user.profile_pic == '' %>
+		<%= image_tag "headshot_placeholder.png", size: '18x18' %>
+		<%#= link_to (image_tag "headshot_placeholder.jpg"), forrent_index_path %>
 	<% else %>
-		<img src="//placehold.it/50x50" />
+		<img src="<%= @user.profile_pic %>" width="30px" />
 	<% end %>
 	<%= @user.first_name.capitalize if @user.first_name %> <%= @user.last_name.capitalize if @user.last_name %>
 </h3>
@@ -11,6 +12,10 @@
 
 <% if @user.email %>
 	<p>Email: <a href="mailto:<%= @user.email %>"><%= @user.email if @user.email %></a></p>
+<% end %>
+
+<% if @user.location %>
+	<p>Home Club: <%= link_to "#{@user.location.name.titleize}", location_path(@user.location.id) if @user.location.name %></p>
 <% end %>
 
 <p>Gender: <%= @user.gender if @user.gender %></p>
