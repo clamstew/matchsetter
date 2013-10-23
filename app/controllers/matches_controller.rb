@@ -15,8 +15,6 @@ class MatchesController < ApplicationController
 
   # GET /matches/new
   def new
-    # @ntrp_floor = (current_user.skillset - 0.5) if current_user.skillset
-    # @ntrp_ceiling = (current_user.skillset + 0.5) if current_user.skillset
     @users  = User.where("skillset >= ? AND skillset <= ?", @ntrp_floor, @ntrp_ceiling) # for finding users
     @match  = Match.new
     @match.players.build
@@ -25,11 +23,8 @@ class MatchesController < ApplicationController
   # used when clicing on the create match button for a specific user
   # such as on the location page that lists users
   def new_solo
-    # @ntrp_floor = (current_user.skillset - 0.5) if current_user.skillset
-    # @ntrp_ceiling = (current_user.skillset + 0.5) if current_user.skillset
     @user   = User.find(params[:id])
     @match  = Match.new
-    # @match.players.build
   end
 
   # GET /matches/1/edit
@@ -40,17 +35,17 @@ class MatchesController < ApplicationController
   # POST /matches.json
   def create
     @match = Match.new(match_params)
-
-    if @match.save
-      Player.create(user_id: current_user.id, match_id: @match.id)
-    end
+    # creates a player on match but does not save it yet
+    @match.players.build(user_id: current_user.id)
 
     respond_to do |format|
-      if @match
+      if @match.save && @match.errors.empty?
         format.html { redirect_to @match, notice: 'Match was successfully created.' }
         format.json { render action: 'show', status: :created, location: @match }
+      elsif @match.errors.empty? == false
+        format.html { redirect_to new_match_path, alert: "#{@match.errors.messages.inspect}" }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', :alert => "Unable to update user. #{@match.errors}" }
         format.json { render json: @match.errors, status: :unprocessable_entity }
       end
     end
@@ -60,20 +55,17 @@ class MatchesController < ApplicationController
   # such as on the location page that lists users
   def create_solo
     @match = Match.new(match_params)
-
-    if @match.save
-      # me
-      Player.create(user_id: current_user.id, match_id: @match.id)
-      # opponent
-      Player.create(user_id: params[:id], match_id: @match.id)
-    end
+    @match.players.build(user_id: current_user.id) # me as player
+    @match.players.build(user_id: params[:id]) #opponent as player
 
     respond_to do |format|
-      if @match
+      if @match.save && @match.errors.empty?
         format.html { redirect_to @match, notice: 'Match was successfully created.' }
         format.json { render action: 'show', status: :created, location: @match }
+      elsif @match.errors.empty? == false
+        format.html { redirect_to new_match_path, alert: "#{@match.errors.messages}" }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', :alert => "Unable to update user. #{@match.errors}" }
         format.json { render json: @match.errors, status: :unprocessable_entity }
       end
     end

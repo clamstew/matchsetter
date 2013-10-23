@@ -3,6 +3,6 @@ class Location < ActiveRecord::Base
   has_many :users
 
   def to_param
-    "#{id}-#{name}".parameterize
+    "#{id}-#{name}-#{zip}".parameterize
   end
 end
