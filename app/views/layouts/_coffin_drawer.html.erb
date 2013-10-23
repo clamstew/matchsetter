@@ -22,9 +22,9 @@
             <i class="fa fa-group"></i>&nbsp;&nbsp;My Club
           <% end %>
         <% else %>
-          <%= link_to edit_user_registration_path, :alert => "lakfjasdf" do %>
-            <i class="fa fa-group"></i>&nbsp;&nbsp;My Club
-          <% end %>
+          <%#= link_to edit_user_registration_path(:home_club => "false"), :alert => "no home club" do %>
+            <!-- <i class="fa fa-group"></i>&nbsp;&nbsp;My Club -->
+          <%# end %>
         <% end %>
       </li>
     	<li><%= link_to destroy_user_session_path, :method=>'delete' do %>
