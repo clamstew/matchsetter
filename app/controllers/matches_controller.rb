@@ -43,7 +43,11 @@ class MatchesController < ApplicationController
         format.html { redirect_to @match, notice: 'Match was successfully created.' }
         format.json { render action: 'show', status: :created, location: @match }
       elsif @match.errors.empty? == false
-        format.html { redirect_to new_match_path, alert: "#{@match.errors.messages.inspect}" }
+        @errors = []
+        @match.errors.messages.each do |x, y| 
+          @errors << "#{y}" 
+        end
+        format.html { redirect_to new_match_path, alert: "#{@errors}" }
       else
         format.html { render action: 'new', :alert => "Unable to update user. #{@match.errors}" }
         format.json { render json: @match.errors, status: :unprocessable_entity }
