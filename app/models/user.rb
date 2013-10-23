@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :players
   has_many :matches, through: :players
+  has_many :availability_slots
   belongs_to :location
 end
