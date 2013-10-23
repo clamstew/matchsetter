@@ -4,27 +4,31 @@
   <ul class="nav">
     <li>
       <%= link_to root_path do %>
-        <i class="icon-home sidebar-icon"></i>&nbsp;&nbsp;Home
+        <i class="fa fa-home sidebar-icon"></i>&nbsp;&nbsp;Home
       <% end %>
     </li>
     
 	<% if user_signed_in? %>
       <li><%= link_to user_path(current_user.id) do %>
-          <i class="icon-user"></i>&nbsp;&nbsp;My Profile
+          <i class="fa fa-user"></i>&nbsp;&nbsp;My Profile
         <% end %></li>
 		  <li>
+      <li><%= link_to matches_path do %>
+          <i class="fa fa-resize-small"></i>&nbsp;&nbsp;My Matches
+        <% end %></li>
+      <li>
         <% if current_user.location != nil %>
           <%= link_to location_path(current_user.location) do %>
-            <i class="icon-group"></i>&nbsp;&nbsp;My Club
+            <i class="fa fa-group"></i>&nbsp;&nbsp;My Club
           <% end %>
         <% else %>
           <%= link_to edit_user_registration_path, :alert => "lakfjasdf" do %>
-            <i class="icon-group"></i>&nbsp;&nbsp;My Club
+            <i class="fa fa-group"></i>&nbsp;&nbsp;My Club
           <% end %>
         <% end %>
       </li>
     	<li><%= link_to destroy_user_session_path, :method=>'delete' do %>
-          <i class="icon-signout"></i>&nbsp;&nbsp;Logout
+          <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Logout
         <% end %>
       </li>
     	</li>
@@ -34,16 +38,16 @@
     <% else %>
 	    <li>
         <%= link_to new_user_session_path do %>
-          <i class="icon-signin"></i>&nbsp;&nbsp;Login
+          <i class="fa fa-sign-in"></i>&nbsp;&nbsp;Login
         <% end %>  
       </li>	
 	    <li><%= link_to new_user_registration_path do %>
-          <i class="icon-check"></i>&nbsp;&nbsp;Sign Up
+          <i class="fa fa-check"></i>&nbsp;&nbsp;Sign Up
         <% end %>
       </li>
     <% end %>
 
-    <li><a data-coffin="click" href="/about"><i class="icon-info-sign"></i>&nbsp;&nbsp;About | Contact</a></li>
+    <li><a data-coffin="click" href="/about"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About | Contact</a></li>
     <!-- <li><a data-coffin="click" href="#contact">Contact</a></li> -->
   </ul>
 </div>
