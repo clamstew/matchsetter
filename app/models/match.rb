@@ -11,7 +11,7 @@ class Match < ActiveRecord::Base
 
   def validate_match_players_count
     if self.players.length < 2
-      errors.add(:match_players,'match with no opponents')
+      errors.add(:match_players,'match created with no opponents')
     end
   end
 end
