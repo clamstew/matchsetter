@@ -41,18 +41,5 @@ class UsersController < ApplicationController
     end
   end
 
-  def availability_new
-    @user = current_user
-    @slots = []
-    i = 1
-    21.times do 
-      @slots << @user.availability_slots.new(slot: i)
-      i +=1
-    end
-  end
-
-  def availability_tester
-    @something = params
-  end
-
+  
 end

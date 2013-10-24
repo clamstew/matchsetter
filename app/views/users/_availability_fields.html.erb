@@ -9,7 +9,7 @@
 <% @slots.each do |slot| %>
 	<%= fields_for :availabtility_slots, slot do |slot_field| %>
 	<span class="availablity-rows">
-	    <%= slot_field.check_box :slot["#{i}"] %>
+	    <%= slot_field.check_box(:slot, "days", {:multiple => true}, ) %>
 	</span>
 		<% if i%3 == 0%>
 			<div><hr /></div>

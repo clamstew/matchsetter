@@ -32,9 +32,11 @@
 
 <div class="homepage-icons-main-wrappers clearfix">
 	<div class="homepage-big-icon-wraps">
-		<a href="/">
+		<!-- <a href="/"> -->
+		<%= link_to availability_index_path(current_user.id) do %>
 			<i class="fa fa-clock-o"></i>
-		</a>
+		<% end %>
+		<!-- </a> -->
 	</div>
 	<div class="homepage-big-icon-subtext">availability</div>
 </div>

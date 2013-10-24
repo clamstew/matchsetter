@@ -1,0 +1,24 @@
+<%#= @availability.inspect %>
+<h3>
+	My Availability
+	<%= link_to "Change", availability_new_path, {class: "button pull-right"} %>
+</h3>
+<% @availability.each do |slot| %>
+	<%= "#{slot.day} - #{slot.time}" %><br />
+<% end %>
+
+<hr />
+
+<h3>Opponents with same Availability</h3>
+
+<% @users.each do |user| %>
+	<%= user.first_name.capitalize %>
+	<%= user.last_name.capitalize %>
+	<br />
+	<% user.availability_slots.each do |slot| %>
+		<%= "#{slot.day} - #{slot.time}" %><br />
+	<% end %>
+	<br />
+<% end %>
+<hr />
+<%= @used_ids.inspect %>
