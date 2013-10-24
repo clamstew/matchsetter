@@ -1,0 +1,100 @@
+<%= form_tag user_availability_tester_path, method: :post, :url => {:action => "availability_tester"} do |f| %>
+	<%#= f.fields_for :availability_slots do |builder| %>
+        <%#= render 'availability_fields', :f => builder %>
+    <%# end %>
+	<!-- <h3>Monday:</h3> -->
+    <!-- Morning <%#= check_box('availability_slots[day]', 'M-M', {}, '1')%> -->
+    <!-- Afternoon <%#= check_box('availability_slots[day]', 'M-A', {}, '1')%> -->
+    <!-- Evening <%#= check_box('availability_slots[day]', 'M-E', {}, '1')%> -->
+	<!-- <br />
+	<h3>Tuesday:</h3> -->
+    <%#= check_box('availability_slots[day]', 'T-M', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'T-A', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'T-E', {}, '1')%>
+	<!-- <br />
+	<h3>Wednesday:</h3> -->
+    <%#= check_box('availability_slots[day]', 'W-M', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'W-A', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'W-E', {}, '1')%>
+    <!-- <br />
+    <h3>Thursday:</h3> -->
+    <%#= check_box('availability_slots[day]', 'Th-M', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'Th-A', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'Th-E', {}, '1')%>
+    <!-- <br />
+    <h3>Friday:</h3> -->
+    <%#= check_box('availability_slots[day]', 'F-M', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'F-A', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'F-E', {}, '1')%>
+	<!-- <br />
+	<h3>Saturday:</h3> -->
+    <%#= check_box('availability_slots[day]', 'S-M', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'S-A', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'S-E', {}, '1')%>
+    <!-- <br />
+    <h3>Sunday:</h3> -->
+    <%#= check_box('availability_slots[day]', 'Su-M', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'Su-A', {}, '1')%>
+    <%#= check_box('availability_slots[day]', 'Su-E', {}, '1')%>
+
+	<h3>Choose Availability</h3>
+    <table class="availibility-choose"> 
+    	<thead>
+    		<th>Day</th>
+    		<th>5am - Noon</th>
+    		<th>Noon - 4pm</th>
+    		<th>4pm - 10pm</th>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>Monday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'M-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'M-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'M-E', {}, '1')%></td>
+    		</tr>
+    		<tr>
+    			<td>Tuesday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'T-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'T-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'T-E', {}, '1')%></td>
+    		</tr>
+    		<tr>
+    			<td>Wednesday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'W-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'W-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'W-E', {}, '1')%></td>
+    		</tr>
+    		<tr>
+    			<td>Thursday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'Th-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'Th-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'Th-E', {}, '1')%></td>
+    		</tr>
+    		<tr>
+    			<td>Friday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'F-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'F-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'F-E', {}, '1')%></td>
+    		</tr>
+    		<tr>
+    			<td>Saturday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'S-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'S-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'S-E', {}, '1')%></td>
+    		</tr>
+    		<tr>
+    			<td>Sunday</td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'Su-M', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'Su-A', {}, '1')%></td>
+    			<td class="check"><%= check_box('availability_slots[day]', 'Su-E', {}, '1')%></td>
+    		</tr>
+    	</tbody>
+    </table>
+
+	<div class="form-actions">
+    	<%= submit_tag "Save Time Prefs", name: "time-button" %>
+  	</div>
+<% end %>
+
+
+

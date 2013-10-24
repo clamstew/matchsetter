@@ -171,6 +171,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     margin-left: 10px; 
 }
 
+// USER AVALIABLITY
 
+.availablity-rows{
+	display: inline;
+	float: left;
+	border-bottom: 1px solid #000;
+	&:nth-child(3n + 2) {
+		
+		//float: none;
+	}
+	label {
+		display: inline;
+		float: left;
+		width: 70px;
+	}
+}
+
+table.availibility-choose {
+	tr, td, th {
+		border: 1px solid #000;
+	}
+	td.check {
+		text-align: center;
+	}
+}
 
 
