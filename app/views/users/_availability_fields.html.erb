@@ -1,0 +1,23 @@
+<div>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	<span>Morning</span>
+	<span>Afternoon</span>
+	<span>Evening</span>
+</div>
+
+<% i = 1 %>
+<% @slots.each do |slot| %>
+	<%= fields_for :availabtility_slots, slot do |slot_field| %>
+	<span class="availablity-rows">
+	    <%= slot_field.check_box :slot["#{i}"] %>
+	</span>
+		<% if i%3 == 0%>
+			<div><hr /></div>
+		<% end %>
+	<% end %>
+	<% i+= 1 %>
+<% end %>
+
+<hr /><br /><hr />
+<!-- 
+<%#= f.check_box :availablility_slots, :collection => @slots, :as => :check_boxes %> -->
