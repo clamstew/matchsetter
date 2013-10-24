@@ -1,0 +1,12 @@
+<%= form_for @user, :url => {:action => "availability_tester"} do |f| %>
+	<%= f.fields_for :availability_slots do |builder| %>
+        <%= render 'availability_fields', :f => builder %>
+    <% end %>
+
+	<div class="form-actions">
+    	<%= f.button :submit %>
+  	</div>
+<% end %>
+
+
+

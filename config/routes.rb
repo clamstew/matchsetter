@@ -22,4 +22,7 @@ Matchsetter::Application.routes.draw do
   # user stuff with devise
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users 
+
+  get 'users/:id/availability/new', to: 'users#availability_new', as: 'user_availability_new'
+  patch 'users/:id/availability/tester', to: 'users#availability_tester', as: 'user_availability_tester'
 end
