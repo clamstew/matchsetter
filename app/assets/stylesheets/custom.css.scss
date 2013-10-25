@@ -1,5 +1,5 @@
 // Global Styles
-
+@import 'cool_checkbox';
 
 
 header, h3, h2 {
@@ -189,6 +189,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 table.availibility-choose {
+	background: #000;
+	color: #fff;
 	tr, td, th {
 		border: 1px solid #000;
 	}
