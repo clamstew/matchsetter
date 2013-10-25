@@ -1,58 +1,218 @@
 <%= form_tag availability_create_path, method: :post, :url => {:action => "create"} do |f| %>
 
+
+
+  
+<!--     
+          <input type="checkbox" value="None" id="roundedOne" name="check" checked />
+          <label for="roundedOne"></label>
+      </div>
+    </section> -->
+  
+
+
     <h3>Choose Availability</h3>
-    <table class="availibility-choose"> 
-        <thead>
-            <th>Day</th>
-            <th>5am - Noon</th>
-            <th>Noon - 4pm</th>
-            <th>4pm - 10pm</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Monday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'M-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'M-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'M-E', {}, '1')%></td>
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'T-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'T-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'T-E', {}, '1')%></td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'W-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'W-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'W-E', {}, '1')%></td>
-            </tr>
-            <tr>
-                <td>Thursday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'Th-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'Th-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'Th-E', {}, '1')%></td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'F-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'F-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'F-E', {}, '1')%></td>
-            </tr>
-            <tr>
-                <td>Saturday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'S-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'S-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'S-E', {}, '1')%></td>
-            </tr>
-            <tr>
-                <td>Sunday</td>
-                <td class="check"><%= check_box('availability_slots[day]', 'Su-M', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'Su-A', {}, '1')%></td>
-                <td class="check"><%= check_box('availability_slots[day]', 'Su-E', {}, '1')%></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="ondisplay">
+        <table class="availibility-choose"> 
+            <thead>
+                <th>Day</th>
+                <th>5am - Noon</th>
+                <th>Noon - 4pm</th>
+                <th>4pm - 10pm</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'M-M', {id: 'availabilityChecks1'}, '1')%>
+                                <label for="availabilityChecks1"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'M-A', {id: 'availabilityChecks2'}, '1')%>
+                                <label for="availabilityChecks2"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'M-E', {id: 'availabilityChecks3'}, '1')%>
+                                <label for="availabilityChecks3"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'T-M', {id: 'availabilityChecks4'}, '1')%>
+                                <label for="availabilityChecks4"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'T-A', {id: 'availabilityChecks5'}, '1')%>
+                                <label for="availabilityChecks5"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'T-E', {id: 'availabilityChecks6'}, '1')%>
+                                <label for="availabilityChecks6"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'W-M', {id: 'availabilityChecks7'}, '1')%>
+                                <label for="availabilityChecks7"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'W-A', {id: 'availabilityChecks8'}, '1')%>
+                                <label for="availabilityChecks8"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'W-E', {id: 'availabilityChecks9'}, '1')%>
+                                <label for="availabilityChecks9"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'Th-M', {id: 'availabilityChecks10'}, '1')%>
+                                <label for="availabilityChecks10"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'Th-A', {id: 'availabilityChecks11'}, '1')%>
+                                <label for="availabilityChecks11"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'Th-E', {id: 'availabilityChecks12'}, '1')%>
+                                <label for="availabilityChecks12"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'F-M', {id: 'availabilityChecks13'}, '1')%>
+                                <label for="availabilityChecks13"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'F-A', {id: 'availabilityChecks14'}, '1')%>
+                                <label for="availabilityChecks14"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'F-E', {id: 'availabilityChecks15'}, '1')%>
+                                <label for="availabilityChecks15"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'S-M', {id: 'availabilityChecks16'}, '1')%>
+                                <label for="availabilityChecks16"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'S-A', {id: 'availabilityChecks17'}, '1')%>
+                                <label for="availabilityChecks17"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'S-E', {id: 'availabilityChecks18'}, '1')%>
+                                <label for="availabilityChecks18"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'Su-M', {id: 'availabilityChecks19'}, '1')%>
+                                <label for="availabilityChecks19"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'Su-A', {id: 'availabilityChecks20'}, '1')%>
+                                <label for="availabilityChecks20"></label>
+                            </div>
+                        </section>
+                    </td>
+                    <td class="check">
+                        <section>
+                            <div class="roundedOne">
+                                <%= check_box('availability_slots[day]', 'Su-E', {id: 'availabilityChecks21'}, '1')%>
+                                <label for="availabilityChecks21"></label>
+                            </div>
+                        </section>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     
     <br />
     <div class="form-actions">
